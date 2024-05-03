@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundo Colorido</title>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.5s ease;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            color: white;
+            border-radius: 10px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin: 0; /* Remover margem padrão */
+        }
+
+        .blue-bg {
+            background-color: blue;
+        }
+
+        .red-bg {
+            background-color: red;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body class="blue-bg">
+    <div class="container">
+        <h1>SEU DISPOSITIVO FOI HACKEADO!!!</h1>
+    </div>
+
+    <!-- Adicionando áudio -->
+    <audio autoplay>
+        <source src="haha.mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            setInterval(function() {
+                const body = document.querySelector('body');
+                if (body.classList.contains('blue-bg')) {
+                    body.classList.remove('blue-bg');
+                    body.classList.add('red-bg');
+                } else {
+                    body.classList.remove('red-bg');
+                    body.classList.add('blue-bg');
+                }
+            }, 1000); // Altera a cada 1 segundo
+        });
+    </script>
+</body>
+</html>
